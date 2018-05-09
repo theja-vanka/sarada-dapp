@@ -12,4 +12,10 @@ export const HomeStack = StackNavigator({
   TabScreen: {
       screen: TabScreen
   }
+},
+{
+    navigationOptions :{
+        header: null,
+        title:'Welcome',
+}
 });

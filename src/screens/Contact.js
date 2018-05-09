@@ -20,7 +20,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class Contact extends Component<Props> {
+export default class Contact extends Component {
   render() {
     return (
       <View style={styles.container}>

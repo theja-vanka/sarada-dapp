@@ -46,11 +46,13 @@ export default TabNavigator({
       inactiveTintColor: '#5A6169',
       style: {
           backgroundColor: '#E9ECEF'
+      },
+      indicatorStyle: {
+          backgroundColor: '#E9ECEF'
       }
     },
     swipeEnabled : true,
-    navigationOptions: {
-        header:null,
-      },
-}
+    backBehavior: false,
+},
+ 
 );

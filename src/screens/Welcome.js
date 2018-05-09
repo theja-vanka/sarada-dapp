@@ -15,12 +15,8 @@ import { Button } from 'react-native-elements';
 
 
 
-type Props = {};
+
 export default class Welcome extends Component {
-  static navigationOptions = {
-    header: null,
-    title:'Welcome',
-  };
   render() {
     const { navigate } = this.props.navigation;
     return (

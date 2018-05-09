@@ -12,15 +12,8 @@ import {
   View
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
-type Props = {};
-export default class Home extends Component<Props> {
+export default class Home extends Component {
   static navigationOptions = {
     header: null,
     title:'Home',
@@ -31,9 +24,6 @@ export default class Home extends Component<Props> {
         <Text style={styles.welcome}>
           Pruthvi
           </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
       </View>
     );
   }
