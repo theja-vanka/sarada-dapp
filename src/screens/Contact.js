@@ -20,12 +20,12 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+export default class Contact extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Contact Screen.
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
