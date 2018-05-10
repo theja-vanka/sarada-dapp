@@ -25,6 +25,7 @@ class Welcome extends Component{
                     <Button
                     large
                     title='GET STARTED'
+                    backgroundColor='#212529'
                     onPress={() => navigate("Home", {screen: "Home"})}
                     />
                 </View>

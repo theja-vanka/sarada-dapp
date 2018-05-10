@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { TabNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 
 import Home from './Home';
 import Chat from './Chat';
@@ -36,23 +37,43 @@ class ContactScreen extends React.Component {
     }
   }
 export default TabNavigator({
-  Chat: ChatScreen,
-  Home: HomeScreen,
-  Contact: ContactScreen,
+  Chat: {
+    screen: ChatScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => <Icon name="chat"  size={35} color={tintColor} />
+    },
+},
+  Home: {
+    screen: HomeScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => <Icon name="home"  size={35} color={tintColor} />
+    },
+},
+  Contact: {
+    screen: ContactScreen,
+    navigationOptions: {
+      tabBarIcon: ({ tintColor }) => <Icon name="contacts" size={35} color={tintColor} />
+    },
+},
 },
 {
     tabBarOptions: {
       activeTintColor: '#0067F4',
       inactiveTintColor: '#5A6169',
       style: {
-          backgroundColor: '#E9ECEF'
+          backgroundColor: '#212529',
+          height: 70,
+          paddingTop: 20,
       },
       indicatorStyle: {
-          backgroundColor: '#E9ECEF'
-      }
+          backgroundColor: '#212529'
+      },
+      showIcon: true,
+      showLabel: false,
     },
     swipeEnabled : true,
     backBehavior: false,
+    
 },
  
 );
