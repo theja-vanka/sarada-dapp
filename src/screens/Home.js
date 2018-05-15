@@ -12,6 +12,8 @@ import {
   Text
 } from 'react-native';
 
+import { Button } from 'react-native-elements';
+
 
 import { Avatar, Icon} from 'react-native-elements';
 
@@ -28,7 +30,7 @@ export default class Home extends Component {
         <Avatar
           large
           rounded
-          source={require('../images/me.jpg')}
+          source={require('../images/eth.png')}
           onPress={() => console.log("Works!")}
           activeOpacity={0.7}
           />
@@ -42,6 +44,16 @@ export default class Home extends Component {
           </View>
         </View>
         <View style={styles.flexiit}>
+        <Button
+          large
+          title='Notifications'
+          backgroundColor='#212529'
+          />
+        <Button
+          large
+          title='Alert Vote'
+          backgroundColor='#212529'
+          />
         </View>
       </View>
     );
