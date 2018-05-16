@@ -22,10 +22,14 @@ class Welcome extends Component{
                 <View style={styles.flexit}>
                 </View>
                 <View style={styles.flexit}>
+                
                     <Button
                     large
+                      raised
+                        icon={{name: 'chevron-right'}}
                     title='GET STARTED'
-                    backgroundColor='#212529'
+                    backgroundColor='#282f3b'
+                    color='#FFF'
                     onPress={() => navigate("Home", {screen: "Home"})}
                     />
                 </View>
@@ -41,7 +45,7 @@ class Welcome extends Component{
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFFFFF',
+        backgroundColor: '#fff',
         flexDirection: 'column',
       },
       flexiit: {

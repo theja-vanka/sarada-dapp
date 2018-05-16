@@ -9,50 +9,55 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import {ListItem, SearchBar } from 'react-native-elements';
 
-type Props = {};
+const list = [
+  {
+    name: 'Amy Farha',
+    subtitle: 'Vice President'
+  },
+  {
+    name: 'Chris Jackson',
+    subtitle: 'Vice Chairman'
+  },
+]
+
+
+
+
 export default class Contact extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Contact Screen.
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+      <View>
+          <View>
+            <SearchBar
+            lightTheme
+             placeholder='Type Here...' />
       </View>
+        <View>
+  {
+      
+        
+    list.map((l, i) => (
+      <ListItem
+        key={i}
+      
+        title={l.name}
+        subtitle={l.subtitle}
+      />
+    ))
+  }
+  </View>
+
+</View>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+
 });
