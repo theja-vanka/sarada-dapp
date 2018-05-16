@@ -58,15 +58,15 @@ export default TabNavigator({
 },
 {
     tabBarOptions: {
-      activeTintColor: '#0067F4',
-      inactiveTintColor: '#5A6169',
+      activeTintColor: '#ff7371',
+      inactiveTintColor: '#6e757f',
       style: {
-          backgroundColor: '#212529',
+          backgroundColor: '#2a313d',
           height: 70,
           paddingTop: 20,
       },
       indicatorStyle: {
-          backgroundColor: '#212529'
+          backgroundColor: '#2a313d'
       },
       showIcon: true,
       showLabel: false,
