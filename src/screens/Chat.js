@@ -14,6 +14,7 @@ import {
 import {Input, FormInput, FormValidationMessage, Button } from 'react-native-elements';
 import { GiftedChat } from 'react-native-gifted-chat'
 import {Icon} from 'react-native-vector-icons/FontAwesome';
+import Dialogflow from "react-native-dialogflow";
 
 
 
@@ -21,6 +22,13 @@ export default class Chat extends Component {
   state = {
     messages: [],
   }
+  constructor(props) {
+    super(props);
+
+    Dialogflow.setConfiguration(
+      "b6f6ed33ceef498a9c98f35d9df1f80e", Dialogflow.LANG_ENGLISH
+    );
+}
 
   componentWillMount() {
     this.setState({
@@ -32,7 +40,7 @@ export default class Chat extends Component {
           user: {
             _id: 2,
             name: 'React Native',
-            avatar: 'https://placeimg.com/140/140/any',
+            avatar: require('../images/logo_d.png'),
           },
         },
       ],
@@ -40,6 +48,11 @@ export default class Chat extends Component {
   }
 
   onSend(messages = []) {
+    //console.log(typeof messages[0].text.toString());
+    Dialogflow.requestQuery(messages[0].text, 
+    reqres=>console.log(reqres.result.fulfillment.speech), 
+    error=>console.log(error));
+
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))
