@@ -22,6 +22,7 @@ export default class Home extends Component {
     header: null,
     title:'Home',
   };
+  
   render() {
     return (
       <View style={styles.container}>
@@ -37,7 +38,7 @@ export default class Home extends Component {
                   activeOpacity={0.7}
               />
               <View style={styles.flexit2}>
-            <Text style={{color:'#fff',fontSize:30,fontWeight: 'bold',}}>User name</Text></View>
+            <Text style={{color:'#fff',fontSize:30,fontWeight: 'bold',}}>Krishna</Text></View>
               </View>
 
             </View>
@@ -54,7 +55,7 @@ export default class Home extends Component {
           </View>
           <View style={styles.merow}>
           <Icon name="attach-money" size={40} color='#ff7371'/>
-          <Text style={styles.money}> 132 </Text>
+          <Text style={styles.money}> - - - </Text>
           </View>
           <View style={styles.merow}>
           <Icon name="add-circle" size={22} color='#ffffff'/>
@@ -66,18 +67,22 @@ export default class Home extends Component {
           title='Notifications'
           backgroundColor='#282f3b'
           color='#81d3cf'
+          onPress={() => alert('No notifications')}
           />
         <Button
           large
           title='Alert Vote'
           backgroundColor='#282f3b'
              color='#81d3cf'
+             onPress={() => alert('Use chatbot to vote')}
           />
         </View>
       </View>
     );
   }
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
