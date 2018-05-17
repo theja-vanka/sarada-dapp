@@ -26,7 +26,7 @@ export default class Chat extends Component {
     super(props);
 
     Dialogflow.setConfiguration(
-      "b6f6ed33ceef498a9c98f35d9df1f80e", Dialogflow.LANG_ENGLISH
+      "0bcea5e4402241a19f0cc9068555e205", Dialogflow.LANG_ENGLISH
     );
 }
 
@@ -48,14 +48,27 @@ export default class Chat extends Component {
   }
 
   onSend(messages = []) {
-    //console.log(typeof messages[0].text.toString());
-    Dialogflow.requestQuery(messages[0].text, 
-    reqres=>console.log(reqres.result.fulfillment.speech), 
-    error=>console.log(error));
-
+    console.log( messages);
     this.setState(previousState => ({
       messages: GiftedChat.append(previousState.messages, messages),
     }))
+    Dialogflow.requestQuery(messages[0].text, 
+    reqres=>{
+      for(let i=0; i <reqres.result.fulfillment.messages.length;i++)
+      {
+        let botreplys = [ { 
+          _id: Math.random(),
+          text: reqres.result.fulfillment.messages[i].speech,
+          createdAt: new Date(),
+          user: { _id: Math.random(),
+            name: 'React Native',
+            avatar: require('../images/logo_d.png'),  },} ]
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, botreplys),
+          }))
+      }
+    },
+    error=>console.log(error));
   }
   render() {
     return (
